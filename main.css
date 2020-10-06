@@ -3,22 +3,62 @@ body {
 }
 
 #top {
-  background-color: pink;
-  text-align: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   position: relative;
+  text-align: center;
+  background-color: pink;
+  background: 
+    linear-gradient(rgba(248, 106, 177, 0.534), rgba(248, 106, 177, 0.363)),
+    url(assets/backsplash.JPG);
 }
 
-#top h2 {
+#name {
   margin: 0;
+  font-size: 50px;
 }
 
-.nav ul {
+#line {
+  width: 150px;
+  border: 3px solid pink;
+  border-radius: 5px;
+}
+
+#title {
+  margin: 0;
+  font-size: 20px;
+}
+
+#top-display {
+  text-align: center;
+  width: 100%;
+  align-items: center;
+  color: white;
+  position: relative;
+  vertical-align: center;
+}
+
+.nav-bar {
   list-style-type: none;
   padding: 0;
+  color: white;
 }
 
 .nav-item {
   display: inline-block;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: pink;
+}
+
+.sticky + .content {
+  padding-top: 60px;
 }
