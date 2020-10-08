@@ -3,13 +3,13 @@ body {
 }
 
 #top {
+  /* height: 631px; */
   height: 100vh;
   width: 100%;
-  position: relative;
   text-align: center;
-  background-color: pink;
   background: 
-    linear-gradient(rgba(248, 106, 177, 0.534), rgba(248, 106, 177, 0.363)),
+    linear-gradient(rgba(248, 106, 177, 0.534),
+     rgba(248, 106, 177, 0.363)),
     url(assets/backsplash.JPG);
 }
 
@@ -32,20 +32,51 @@ body {
 #top-display {
   text-align: center;
   width: 100%;
-  align-items: center;
   color: white;
   position: relative;
-  vertical-align: center;
+  height: calc(100% - 50px);
+}
+
+#details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav {
+  margin-top: auto;
+  height: 50px;
 }
 
 .nav-bar {
   list-style-type: none;
   padding: 0;
+  margin:0;
   color: white;
+  height: 100%;
 }
 
 .nav-item {
   display: inline-block;
+  height: 100%;
+  line-height: 50px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  height: 100%;
+  line-height: 50px;
+  display: inline-block;
+  /* color: white; */
+  /* margin-right: 10px; */
+}
+
+.nav-item a:hover {
+  color: pink;
+  text-decoration: line-through;
 }
 
 .content {
@@ -56,9 +87,38 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: pink;
+  background-color: rgb(137, 86, 115);
+  /* background: 
+  linear-gradient(rgba(248, 106, 177, 0.534), rgba(248, 106, 177, 0.363)),
+   url(assets/backsplash.JPG);
+    background-position-y: bottom; */
 }
 
 .sticky + .content {
   padding-top: 60px;
+}
+
+#bio {
+  display: block;
+  height: 90vh;
+}
+
+#skills {
+  display: none;
+  height: 90vh;
+}
+
+#projects {
+  display: none;
+  height: 90vh;
+}
+
+#blog {
+  display: none;
+  height: 90vh;
+}
+
+#contact {
+  display: none;
+  height: 90vh;
 }
