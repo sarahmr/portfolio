@@ -39,7 +39,7 @@ navItems.forEach(nav => {
 let resetMainDisplay = (currentPage) => {
   for (let i = 0; i < mainDisplay.children.length; i++) {
     if (mainDisplay.children[i].id === currentPage) {
-      mainDisplay.children[i].style.display = "block"
+      mainDisplay.children[i].style.display = "grid"
     } else {
       mainDisplay.children[i].style.display = "none"
     } 

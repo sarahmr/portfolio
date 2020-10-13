@@ -62,7 +62,7 @@ body {
   height: 100%;
   line-height: 50px;
   cursor: pointer;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .nav-item a {
@@ -71,12 +71,12 @@ body {
   line-height: 50px;
   display: inline-block;
   /* color: white; */
-  /* margin-right: 10px; */
+  margin-right: 10px;
 }
 
 .nav-item a:hover {
   color: pink;
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
 .content {
@@ -99,26 +99,74 @@ body {
 }
 
 #bio {
-  display: block;
-  height: 90vh;
+  display: grid;
+  height: 100vh;
+  grid: [row1-start] "picture welcome" auto [row1-end]
+        [row2-start] "picture bio" auto [row2-end]
+        [row3-start] "picture skills-title" auto [row3-end]
+        [row4-start] "picture skills" auto [row4-end]
+        / 1fr 3fr;
+  align-content: center;
+  column-gap: 20px;
 }
 
-#skills {
-  display: none;
-  height: 90vh;
+#bio-welcome {
+  grid-area: welcome;
+  justify-self: center;
+  align-self: end;
+  margin: 0;
+}
+
+#bio img {
+  grid-area: picture;
+  align-self: center;
+}
+
+#bio-text {
+  grid-area: bio;
+  align-self: start;
+  margin: 0;
+  text-align: center;
+}
+
+#bio-skills-title {
+  grid-area: skills-title;
+  justify-self: center;
+  align-self: end;
+  margin: 0;
+}
+
+#bio-skills {
+  grid-area: skills;
+  margin: 0;
+  justify-self: center;
+  align-self: center;
 }
 
 #projects {
   display: none;
-  height: 90vh;
+  height: 100vh;
+}
+
+.project-photos figure {
+  border: solid gray 3px;
+  margin: 10px;
+  width: fit-content;
+  display: inline-block;
 }
 
 #blog {
   display: none;
-  height: 90vh;
+  height: 100vh;
 }
 
 #contact {
   display: none;
-  height: 90vh;
+  height: 100vh;
 }
+
+.main-display {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
