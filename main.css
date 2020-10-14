@@ -70,13 +70,17 @@ body {
   height: 100%;
   line-height: 50px;
   display: inline-block;
-  /* color: white; */
+  color: white;
   margin-right: 10px;
 }
 
 .nav-item a:hover {
   color: pink;
-  /* text-decoration: line-through; */
+}
+
+a.active {
+  border-bottom: 2px solid black;
+  color: pink;
 }
 
 .content {
@@ -144,7 +148,7 @@ body {
 }
 
 #projects {
-  display: none;
+  display: grid;
   height: 100vh;
 }
 
@@ -156,12 +160,12 @@ body {
 }
 
 #blog {
-  display: none;
+  display: grid;
   height: 100vh;
 }
 
 #contact {
-  display: none;
+  display: grid;
   height: 100vh;
 }
 

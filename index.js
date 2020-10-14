@@ -22,6 +22,7 @@ function myFunction() {
 
 let navItems = document.querySelectorAll(".nav-item a")
 let mainDisplay = document.querySelector(".main-display")
+let pageSections = document.querySelectorAll("section")
 
 let currentPage = "bio"
 
@@ -30,33 +31,31 @@ navStyleSelected(currentPage)
 navItems.forEach(nav => {
   nav.addEventListener("click", (evt) => {
     currentPage = evt.target.innerText.toLowerCase()
-    resetMainDisplay(currentPage)
     navStyleSelected(currentPage)
   })
 })
 
-
-let resetMainDisplay = (currentPage) => {
-  for (let i = 0; i < mainDisplay.children.length; i++) {
-    if (mainDisplay.children[i].id === currentPage) {
-      mainDisplay.children[i].style.display = "grid"
-    } else {
-      mainDisplay.children[i].style.display = "none"
-    } 
-  }
-}
-
-// why does this override my text color hover? how to get it back?
 function navStyleSelected(currentPage){
   navItems.forEach(item => {
     if (item.innerText.toLowerCase() === currentPage) {
-      item.style["border-bottom"] = "2px solid black"
-      item.style.color = "pink"
+      item.classList.add("active")
     } else {
-      item.style["border-bottom"] = "none"
-      item.style.color = "white"
+      item.classList.remove("active")
     }
   })
 }
 
+function sectionScroll(){
+  let index = pageSections.length
+
+  while(--index && window.scrollY + 100 < pageSections[index].offsetTop) {}
+
+  navItems.forEach(item => item.classList.remove("active"))
+
+  if (index > 0) {
+    navItems[index - 1].classList.add("active")
+  }
+}
+
+window.addEventListener("scroll", sectionScroll)
 
