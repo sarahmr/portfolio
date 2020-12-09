@@ -79,8 +79,12 @@ projectFigures.forEach(figure =>
     let video = document.createElement("iframe")
     video.classList.add("modal-video")
 
+    let projectDescArea = document.createElement("div")
+    projectDescArea.classList.add("modal-project-desc")
+
     let projectDesc = document.createElement("p")
-    projectDesc.classList.add("modal-project-desc")
+    let projectBulletPoints = document.createElement("ul")
+
 
     if (evt.target.alt === "Adventure Creator") {
 
@@ -92,6 +96,20 @@ projectFigures.forEach(figure =>
 
       projectDesc.innerText = "Built using Rails & React, in Adventure Creator users can create, review, and play works of interactive fiction."
 
+      let bulletPointA = document.createElement("li")
+      bulletPointA.innerText = "Developed a user-friendly, tree-based story editor with React, React Drag and Drop, and SVG"
+
+      let bulletPointC = document.createElement("li")
+      bulletPointC.innerText = "Built a reviews API that allows users to view, add, and aggregate reviews and display average ratings"
+
+      let bulletPointD = document.createElement("li")
+      bulletPointD.innerText = "RESTful API backend utilizing JSON Web Tokens for user authentication"
+
+      projectBulletPoints.append(bulletPointA, bulletPointC, bulletPointD)
+
+      projectDescArea.append(projectDesc, projectBulletPoints)
+      console.log("here")
+
     } else if (evt.target.alt === "Stitcher") {
 
       video.width = "560"
@@ -101,6 +119,16 @@ projectFigures.forEach(figure =>
       video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
       projectDesc.innerText = "With Stitcher, users can discover & create cross stitch designs, view needed supples, and track their progress as they stitch the design."
+
+      let bulletPointA = document.createElement("li")
+      bulletPointA.innerText = "Developed a design-creator with React and CSS where users can create cross stitch patterns and identify required thread supplies for a list on the design-details page"
+
+      let bulletPointB = document.createElement("li")
+      bulletPointB.innerText = "Implemented a progress bar and visual cues that allow users to track their progress as they're stitching a design"      
+
+      projectBulletPoints.append(bulletPointA, bulletPointB)
+
+      projectDescArea.append(projectDesc, projectBulletPoints)
 
     } else if (evt.target.alt === "Arcade") {
       
@@ -112,6 +140,15 @@ projectFigures.forEach(figure =>
 
       projectDesc.innerText = "Users can play custom-built games, view leaderboards, and track their stats."
 
+      let bulletPointA = document.createElement("li")
+      bulletPointA.innerText = "Developed a dynamic single-page application with several different views using pure Javascript"
+
+      let bulletPointB = document.createElement("li")
+      bulletPointB.innerText = "Built an API to track player stats and generate global and game-level leaderboards"
+
+      projectBulletPoints.append(bulletPointA, bulletPointB)
+
+      projectDescArea.append(projectDesc, projectBulletPoints)
     }
 
     // add close button to modal
@@ -125,7 +162,7 @@ projectFigures.forEach(figure =>
       insideModal.innerHTML = "none"
     })
 
-    insideModal.append(exitModalButton, video, projectDesc)
+    insideModal.append(exitModalButton, video, projectDescArea)
   })
 
 )

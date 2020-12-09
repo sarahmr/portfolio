@@ -200,10 +200,11 @@ a.active {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: #f4f0f0;
   border: 1px solid grey;
-  box-shadow: pink 16px 16px;
-  margin: 10% auto;
+  border-radius: 5px;
+  /* box-shadow: pink 16px 16px; */
+  margin: 2% auto;
   width: 90%;
   display: flex; 
   flex-direction: column;
@@ -212,6 +213,20 @@ a.active {
 
 .modal-button {
   align-self: flex-start;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  background-color: rgb(137, 86, 115);
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 600;
+  padding: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .modal-video {
@@ -219,6 +234,10 @@ a.active {
 }
 
 .modal-project-desc {
+  margin: 0;
+}
+
+.modal-project-desc p {
   margin: 0;
   text-align: center;
 }
