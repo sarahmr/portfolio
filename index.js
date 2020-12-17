@@ -174,3 +174,52 @@ window.addEventListener("click", (evt) => {
     insideModal.innerHTML = ""
   }
 })
+
+// ------ cautious coder feed ----------------
+
+let recentPosts = []
+let postArea = document.querySelector(".blog-posts-area")
+
+fetch("https://sarahmr.github.io/cautious-coder/feed")
+.then(res => res.text())
+.then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+.then(data => {
+  console.log(data)
+
+  recentPosts = data.querySelectorAll("entry")
+
+  console.log(recentPosts)
+
+  recentPosts.forEach(post => {
+    postToHTML(post)
+  })
+})
+
+let postToHTML = (post) => {
+  console.log(post.children[8].getAttribute("url"))
+
+  let singlePost = document.createElement("div")
+
+  let postTitle = post.querySelector("title").innerHTML
+  let postLink = post.querySelector("id").innerHTML
+  let postTitleLink = document.createElement("a")
+
+  postTitleLink.innerText = postTitle
+  postTitleLink.rel = "external"
+  postTitleLink.target = "_blank"
+  postTitleLink.href = `https://${postLink}`
+
+  // let postImage = post.querySelector("media:content")
+  let postImage = document.createElement("img")
+  postImage.src = `https://${post.getElementsByTagName("media:content")[0].getAttribute("url")}`
+  
+  // .getAttribute("url")
+
+  console.log(typeof post.getElementsByTagName("media:content")[0].getAttribute("url"))
+
+  // console.log(postImage)
+
+  singlePost.append(postImage, postTitleLink)
+
+  postArea.append(singlePost)
+}

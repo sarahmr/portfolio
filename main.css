@@ -181,7 +181,7 @@ a.active {
 }
 
 .project-image:hover {
-  box-shadow: pink 3px 3px 1px;
+  box-shadow: rgb(137, 86, 115) 3px 3px 1px;
 }
 
 .caption {
@@ -251,6 +251,11 @@ a.active {
 
 #blog h3 {
   align-self: center;
+}
+
+.blog-posts-area {
+  display: flex;
+  flex-direction: column;
 }
 
 #contact {
