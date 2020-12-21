@@ -111,7 +111,7 @@ a.active {
 
 #bio {
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   grid: [row1-start] "picture welcome" auto [row1-end]
         [row2-start] "picture bio" auto [row2-end]
         [row3-start] "picture skills-title" auto [row3-end]
@@ -160,7 +160,7 @@ a.active {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 90vh;
+  min-height: 90vh;
   background-color: #e9e2e2;
 }
 
@@ -203,7 +203,6 @@ a.active {
   background-color: #f4f0f0;
   border: 1px solid grey;
   border-radius: 5px;
-  /* box-shadow: pink 16px 16px; */
   margin: 2% auto;
   width: 90%;
   display: flex; 
@@ -245,7 +244,7 @@ a.active {
 #blog {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  min-height: 90vh;
   background-color: #f4f0f0;
 }
 
@@ -255,13 +254,37 @@ a.active {
 
 .blog-posts-area {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.blog-post {
+  display: flex;
   flex-direction: column;
+  width: 375px;
+  height: auto;
+  text-align: center;
+}
+
+.blog-post-link {
+  color: grey;
+}
+
+.blog-post-image {
+  border: solid grey 1px;
+  border-radius: 5px;
+  height: 225px;
+  width: 375px;
+}
+
+.blog-post-image:hover {
+  box-shadow: rgb(137, 86, 115) 3px 3px 1px;
 }
 
 #contact {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  min-height: 90vh;
   background-color: #e9e2e2;
 }
 
