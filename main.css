@@ -127,6 +127,7 @@ a.active {
   justify-self: center;
   align-self: end;
   margin: 0;
+  color: rgb(137, 86, 115);
 }
 
 #bio img {
@@ -147,6 +148,7 @@ a.active {
   justify-self: center;
   align-self: end;
   margin: 0;
+  color: rgb(137, 86, 115);
 }
 
 #bio-skills {
@@ -167,9 +169,11 @@ a.active {
 #projects h3 {
   align-self: center;
   margin: 0;
+  color: rgb(137, 86, 115);
+  margin-bottom: 50px;
 }
 
-.project-photos figure {
+.project {
   margin: 10px;
   width: fit-content;
   display: inline-block;
@@ -182,6 +186,14 @@ a.active {
 
 .project-image:hover {
   box-shadow: rgb(137, 86, 115) 3px 3px 1px;
+}
+
+.project p {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  color: grey;
 }
 
 .caption {
@@ -213,19 +225,18 @@ a.active {
 .modal-button {
   align-self: flex-start;
   border-radius: 5px;
-  font-size: 14px;
-  color: white;
-  background-color: rgb(137, 86, 115);
-  font-size: 14px;
+  background-color: #f4f0f0;
   cursor: pointer;
   border: none;
-  font-family: 'Mukta', sans-serif;
-  font-weight: 600;
   padding: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
   margin-left: 10px;
   margin-top: 10px;
+}
+
+.modal-button img {
+  height: 25px;
 }
 
 .modal-video {
@@ -246,10 +257,14 @@ a.active {
   flex-direction: column;
   min-height: 90vh;
   background-color: #f4f0f0;
+  justify-content: center;
 }
 
 #blog h3 {
   align-self: center;
+  color: rgb(137, 86, 115);
+  margin: 0;
+  margin-bottom: 50px;
 }
 
 .blog-posts-area {
@@ -285,9 +300,8 @@ a.active {
   font-weight: 600;
 }
 
-.blog-post-link:hover {
-  color: rgb(137, 86, 115);
-  transform: scale(1.05)
+.blog-post-image:hover {
+  box-shadow: rgb(137, 86, 115) 3px 3px 1px;
 }
 
 #contact {
@@ -299,6 +313,8 @@ a.active {
 
 #contact h3 {
   align-self: center;
+  color: rgb(137, 86, 115);
+  margin: 0;
 }
 
 .main-display section {

@@ -18,7 +18,7 @@ function myFunction() {
   }
 }
 
-// -------------- SECTION VIEW ---------------------
+// -------------- SECTION VIEW ON NAV ---------------------
 
 let navItems = document.querySelectorAll(".nav-item a")
 let mainDisplay = document.querySelector(".main-display")
@@ -63,7 +63,7 @@ window.addEventListener("scroll", sectionScroll)
 
 // on click pop out video in modal with brief description
 
-let projectFigures = document.querySelectorAll("figure")
+let projectFigures = document.querySelectorAll(".project")
 
 let projectModal = document.querySelector(".modal")
 let insideModal = document.querySelector(".modal-content")
@@ -155,7 +155,10 @@ projectFigures.forEach(figure =>
     let exitModalButton = document.createElement("button")
     exitModalButton.classList.add("modal-button")
 
-    exitModalButton.innerText = "X"
+    let exitImage = document.createElement("img")
+    exitImage.src = "assets/icons8-delete-100.png"
+
+    exitModalButton.append(exitImage)
 
     exitModalButton.addEventListener("click", (evt) => {
       projectModal.style.display = "none"
