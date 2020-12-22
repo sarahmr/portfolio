@@ -268,6 +268,7 @@ a.active {
 
 .blog-post-link {
   color: grey;
+  text-decoration: none;
 }
 
 .blog-post-image {
@@ -277,8 +278,16 @@ a.active {
   width: 375px;
 }
 
-.blog-post-image:hover {
-  box-shadow: rgb(137, 86, 115) 3px 3px 1px;
+.blog-post-inner p {
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+.blog-post-link:hover {
+  color: rgb(137, 86, 115);
+  transform: scale(1.05)
 }
 
 #contact {

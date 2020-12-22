@@ -195,23 +195,26 @@ let postToHTML = (post) => {
   let singlePost = document.createElement("div")
   singlePost.classList.add("blog-post")
 
-  let postTitle = post.querySelector("title").innerHTML
-  let postLink = post.querySelector("id").innerHTML
-
   let postTitleLink = document.createElement("a")
   postTitleLink.classList.add("blog-post-link")
 
-  postTitleLink.innerText = postTitle
-  postTitleLink.rel = "external"
   postTitleLink.target = "_blank"
-  postTitleLink.href = `https://${postLink}`
+  postTitleLink.href = `https://${post.querySelector("id").innerHTML}`
+
+  let innerPost = document.createElement("div")
+  innerPost.classList.add("blog-post-inner")
 
   let postImage = document.createElement("img")
   postImage.src = `https://${post.getElementsByTagName("media:content")[0].getAttribute("url")}`
 
   postImage.classList.add("blog-post-image")
 
-  postTitleLink.append(postImage)
+  let postTitle = document.createElement("p")
+  postTitle.innerText = post.querySelector("title").innerHTML
+
+  innerPost.append(postImage, postTitle)
+
+  postTitleLink.append(innerPost)
 
   singlePost.append(postTitleLink)
 
