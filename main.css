@@ -331,3 +331,43 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  width: 500px;
+  height: 25px;
+  border: 1px solid #e9e2e2;
+  font-family: 'Mukta', sans-serif;
+}
+
+.contact-form textarea {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  width: 500px;
+  height: 75px;
+  border: 1px solid #e9e2e2;
+  font-family: 'Mukta', sans-serif;
+}
+
+.contact-form button {
+  width: fit-content;
+  background-color: rgb(137, 86, 115);
+  color: #e9e2e2;
+  border: none;
+  font-family: 'Mukta', sans-serif;
+  font-weight: 600;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 17px;
+  border-radius: 5px;
+  margin: 10px;
+}
