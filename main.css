@@ -115,11 +115,11 @@ body {
   padding-right: 40px;
 }
 
-#bio {
+#about {
   display: grid;
   min-height: 100vh;
   grid: [row1-start] "picture welcome" auto [row1-end]
-        [row2-start] "picture bio" auto [row2-end]
+        [row2-start] "picture about" auto [row2-end]
         [row3-start] "picture skills-title" auto [row3-end]
         [row4-start] "picture skills" auto [row4-end]
         / 1fr 3fr;
@@ -128,7 +128,7 @@ body {
   background-color: #f4f0f0;
 }
 
-#bio-welcome {
+#about-welcome {
   grid-area: welcome;
   justify-self: center;
   align-self: end;
@@ -136,20 +136,20 @@ body {
   color: rgb(137, 86, 115);
 }
 
-#bio img {
+#about img {
   grid-area: picture;
   align-self: center;
-  border: grey double;
+  /* border: grey double; */
 }
 
-#bio-text {
-  grid-area: bio;
+#about-text {
+  grid-area: about;
   align-self: start;
   margin: 0;
   text-align: center;
 }
 
-#bio-skills-title {
+#about-skills-title {
   grid-area: skills-title;
   justify-self: center;
   align-self: end;
@@ -157,7 +157,7 @@ body {
   color: rgb(137, 86, 115);
 }
 
-#bio-skills {
+#about-skills {
   grid-area: skills;
   margin: 0;
   justify-self: center;
@@ -187,7 +187,7 @@ body {
 }
 
 .project-image {
-  border: solid grey 1px;
+  border: solid #d2d2d2 1px;
   border-radius: 5px;
 }
 
@@ -220,7 +220,7 @@ body {
 
 .modal-content {
   background-color: #f4f0f0;
-  border: 1px solid grey;
+  border: 1px solid #d2d2d2;
   border-radius: 5px;
   margin: 2% auto;
   width: 90%;
@@ -230,7 +230,7 @@ body {
 }
 
 .modal-button {
-  align-self: flex-start;
+  align-self: flex-end;
   border-radius: 5px;
   background-color: #f4f0f0;
   cursor: pointer;
@@ -238,7 +238,7 @@ body {
   padding: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
-  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 10px;
 }
 
@@ -248,6 +248,7 @@ body {
 
 .modal-video {
   margin: 20px;
+  border: none;
 }
 
 .modal-project-desc {
@@ -295,7 +296,7 @@ body {
 }
 
 .blog-post-image {
-  border: solid grey 1px;
+  border: solid #d2d2d2 1px;
   border-radius: 5px;
   height: 225px;
   width: 375px;

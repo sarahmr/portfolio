@@ -162,7 +162,7 @@ projectFigures.forEach(figure =>
 
     exitModalButton.addEventListener("click", (evt) => {
       projectModal.style.display = "none"
-      insideModal.innerHTML = "none"
+      insideModal.innerHTML = ""
     })
 
     insideModal.append(exitModalButton, video, projectDescArea)
