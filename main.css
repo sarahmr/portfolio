@@ -1,8 +1,17 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Mukta', sans-serif;
-  color: #3e3d3d;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #616161;
   /* background-color: #f5f4f4; */
+  --webkit-font-smoothing: antialiased
+}
+
+p {
+  line-height: 150%;
 }
 
 #top {
@@ -11,9 +20,12 @@ body {
   width: 100%;
   text-align: center;
   background: 
-    linear-gradient(rgba(248, 106, 177, 0.534),
-     rgba(248, 106, 177, 0.363)),
-    url(assets/backsplash.JPG);
+    linear-gradient(rgba(130, 51, 91, 80%),
+     rgba(248, 106, 177, 41%)),
+    url('assets/backsplash-min.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #name {
@@ -117,7 +129,8 @@ body {
 
 #about {
   display: grid;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  min-height: 600px;
   grid: [row1-start] "picture welcome" auto [row1-end]
         [row2-start] "picture about" auto [row2-end]
         [row3-start] "picture skills-title" auto [row3-end]
@@ -139,6 +152,7 @@ body {
 #about img {
   grid-area: picture;
   align-self: center;
+  justify-self: center;
   /* border: grey double; */
 }
 
@@ -147,6 +161,8 @@ body {
   align-self: start;
   margin: 0;
   text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 #about-skills-title {
@@ -168,7 +184,8 @@ body {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
-  min-height: 90vh;
+  /* min-height: 90vh; */
+  min-height: 550px;
   background-color: #e9e2e2;
 }
 
@@ -180,10 +197,17 @@ body {
   margin-top: 50px;
 }
 
+.project-photos {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .project {
   margin: 10px;
   width: fit-content;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .project-image {
@@ -193,6 +217,7 @@ body {
 
 .project-image:hover {
   box-shadow: rgb(137, 86, 115) 3px 3px 1px;
+  cursor: pointer;
 }
 
 .project p {
@@ -252,7 +277,10 @@ body {
 }
 
 .modal-project-desc {
-  margin: 0;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .modal-project-desc p {
@@ -263,7 +291,8 @@ body {
 #blog {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  /* min-height: 90vh; */
+  min-height: 550px;
   background-color: #f4f0f0;
   /* justify-content: center; */
 }
@@ -280,6 +309,7 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 25px;
 }
 
 .blog-post {
@@ -313,10 +343,33 @@ body {
   box-shadow: rgb(137, 86, 115) 3px 3px 1px;
 }
 
+.blog-button {
+  align-self: center;
+  width: fit-content;
+  background-color: rgb(137, 86, 115);
+  border: none;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 50px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.blog-button a {
+  color: #e9e2e2;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 #contact {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  /* min-height: 90vh; */
+  min-height: 550px;
   background-color: #e9e2e2;
 }
 
@@ -325,6 +378,7 @@ body {
   color: rgb(137, 86, 115);
   margin: 0;
   margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .contact-methods {
@@ -364,11 +418,12 @@ body {
   background-color: rgb(137, 86, 115);
   color: #e9e2e2;
   border: none;
-  font-family: 'Mukta', sans-serif;
-  font-weight: 600;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 400;
   padding-top: 3px;
   padding-bottom: 3px;
   font-size: 17px;
   border-radius: 5px;
   margin: 10px;
+  cursor: pointer;
 }
