@@ -7,6 +7,7 @@ let navbar = document.querySelector(".nav");
 let sticky = navbar.offsetTop
 
 window.addEventListener("resize", () => {
+  console.log("resize")
   sticky = navbar.offsetTop
 })
 
@@ -83,7 +84,6 @@ projectFigures.forEach(figure =>
     projectDescArea.classList.add("modal-project-desc")
 
     let projectDesc = document.createElement("p")
-    let projectBulletPoints = document.createElement("ul")
 
 
     if (evt.target.alt === "Adventure Creator") {
@@ -94,18 +94,7 @@ projectFigures.forEach(figure =>
       video.allowfullscreen = true
       video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
-      projectDesc.innerText = "Built using Rails & React, in Adventure Creator users can create, review, and play works of interactive fiction."
-
-      // let bulletPointA = document.createElement("li")
-      // bulletPointA.innerText = "Developed a user-friendly, tree-based story editor with React, React Drag and Drop, and SVG"
-
-      // let bulletPointC = document.createElement("li")
-      // bulletPointC.innerText = "Built a reviews API that allows users to view, add, and aggregate reviews and display average ratings"
-
-      // let bulletPointD = document.createElement("li")
-      // bulletPointD.innerText = "RESTful API backend utilizing JSON Web Tokens for user authentication"
-
-      // projectBulletPoints.append(bulletPointA, bulletPointC, bulletPointD)
+      projectDesc.innerText = "In Adventure Creator users can create, review, and play works of interactive fiction. The story editor features a tree-based scene display where users can visualize the structure of their stories. Adventure Creator was built using Rails and PostGres on the backend and React, CSS, and SVG on the frontend."
 
       projectDescArea.append(projectDesc)
 
@@ -117,15 +106,7 @@ projectFigures.forEach(figure =>
       video.allowfullscreen = true
       video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
-      projectDesc.innerText = "With Stitcher, users can discover & create cross stitch designs, view needed supples, and track their progress as they stitch the design."
-
-      // let bulletPointA = document.createElement("li")
-      // bulletPointA.innerText = "Developed a design-creator with React and CSS where users can create cross stitch patterns and identify required thread supplies for a list on the design-details page"
-
-      // let bulletPointB = document.createElement("li")
-      // bulletPointB.innerText = "Implemented a progress bar and visual cues that allow users to track their progress as they're stitching a design"      
-
-      // projectBulletPoints.append(bulletPointA, bulletPointB)
+      projectDesc.innerText = "With Stitcher, users can discover and create cross stitch designs. Users can view needed supplies and track their progress as they stitch the design using a progress bar on their private project page. Stitcher was built with Rails and React."
 
       projectDescArea.append(projectDesc)
 
@@ -137,15 +118,7 @@ projectFigures.forEach(figure =>
       video.allowfullscreen = true
       video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
-      projectDesc.innerText = "Users can play custom-built games, view leaderboards, and track their stats."
-
-      // let bulletPointA = document.createElement("li")
-      // bulletPointA.innerText = "Developed a dynamic single-page application with several different views using pure Javascript"
-
-      // let bulletPointB = document.createElement("li")
-      // bulletPointB.innerText = "Built an API to track player stats and generate global and game-level leaderboards"
-
-      // projectBulletPoints.append(bulletPointA, bulletPointB)
+      projectDesc.innerText = "Arcade users can play custom-built games, view leaderboards, and track their stats. This app is a vanilla Javascript single page application that utilizes a custom-built API to track player stats and general global and game-level leaderboards."
 
       projectDescArea.append(projectDesc)
     }
@@ -194,14 +167,15 @@ fetch("https://sarahmr.github.io/cautious-coder/feed")
 })
 
 let postToHTML = (post) => {
+  console.log(post)
   let singlePost = document.createElement("div")
   singlePost.classList.add("blog-post")
 
-  let postTitleLink = document.createElement("a")
-  postTitleLink.classList.add("blog-post-link")
+  let postLink = document.createElement("a")
+  postLink.classList.add("blog-post-link")
 
-  postTitleLink.target = "_blank"
-  postTitleLink.href = `https://${post.querySelector("id").innerHTML}`
+  postLink.target = "_blank"
+  postLink.href = `https://${post.querySelector("id").innerHTML}`
 
   let innerPost = document.createElement("div")
   innerPost.classList.add("blog-post-inner")
@@ -211,14 +185,17 @@ let postToHTML = (post) => {
 
   postImage.classList.add("blog-post-image")
 
-  let postTitle = document.createElement("p")
+  let postTitle = document.createElement("h4")
   postTitle.innerText = post.querySelector("title").innerHTML
 
-  innerPost.append(postImage, postTitle)
+  let postDesc = document.createElement("p")
+  postDesc.innerText = post.querySelector("summary").innerHTML
 
-  postTitleLink.append(innerPost)
+  innerPost.append(postImage, postTitle, postDesc)
 
-  singlePost.append(postTitleLink)
+  postLink.append(innerPost)
+
+  singlePost.append(postLink)
 
   postArea.append(singlePost)
 }
