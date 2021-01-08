@@ -7,11 +7,12 @@ let navbar = document.querySelector(".nav");
 let sticky = navbar.offsetTop
 
 window.addEventListener("resize", () => {
-  console.log("resize")
-  sticky = navbar.offsetTop
+  sticky = window.innerHeight - 50
 })
 
 function positionNavBar() {
+  // console.log("nav")
+  // console.log(sticky, window.pageYOffset)
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
   } else {
@@ -94,7 +95,7 @@ projectFigures.forEach(figure =>
       video.allowfullscreen = true
       video.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 
-      projectDesc.innerText = "In Adventure Creator users can create, review, and play works of interactive fiction. The story editor features a tree-based scene display where users can visualize the structure of their stories. Adventure Creator was built using Rails and PostGres on the backend and React, CSS, and SVG on the frontend."
+      projectDesc.innerText = "In Adventure Creator users can create, review, and play works of interactive fiction. The story editor features a tree-based scene display where users can visualize the structure of their stories. Adventure Creator was built using Rails and Postgres on the backend and React, CSS, React Drag and Drop, and SVG on the frontend."
 
       projectDescArea.append(projectDesc)
 
@@ -167,7 +168,7 @@ fetch("https://sarahmr.github.io/cautious-coder/feed")
 })
 
 let postToHTML = (post) => {
-  console.log(post)
+  // console.log(post)
   let singlePost = document.createElement("div")
   singlePost.classList.add("blog-post")
 
@@ -191,11 +192,11 @@ let postToHTML = (post) => {
   let postDesc = document.createElement("p")
   postDesc.innerText = post.querySelector("summary").innerHTML
 
-  innerPost.append(postImage, postTitle, postDesc)
+  innerPost.append(postImage, postLink, postDesc)
 
-  postLink.append(innerPost)
+  postLink.append(postTitle)
 
-  singlePost.append(postLink)
+  singlePost.append(innerPost)
 
   postArea.append(singlePost)
 }
