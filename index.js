@@ -11,8 +11,6 @@ window.addEventListener("resize", () => {
 })
 
 function positionNavBar() {
-  // console.log("nav")
-  // console.log(sticky, window.pageYOffset)
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
   } else {
@@ -63,8 +61,6 @@ window.addEventListener("scroll", sectionScroll)
 
 // --------- PROJECT MODALS ------------------------------------
 
-// on click pop out video in modal with brief description
-
 let projectFigures = document.querySelectorAll(".project")
 
 let projectModal = document.querySelector(".modal")
@@ -72,11 +68,8 @@ let insideModal = document.querySelector(".modal-content")
 
 projectFigures.forEach(figure => 
   figure.addEventListener("click", (evt) => {
-    // open modal
-    projectModal.style.display = "block"
 
-    // embed youtube
-    // add text to modal
+    projectModal.style.display = "block"
 
     let video = document.createElement("iframe")
     video.classList.add("modal-video")
@@ -85,7 +78,6 @@ projectFigures.forEach(figure =>
     projectDescArea.classList.add("modal-project-desc")
 
     let projectDesc = document.createElement("p")
-
 
     if (evt.target.alt === "Adventure Creator") {
 
@@ -97,7 +89,7 @@ projectFigures.forEach(figure =>
 
       projectDesc.innerText = "In Adventure Creator users can create, review, and play works of interactive fiction. The story editor features a tree-based scene display where users can visualize the structure of their stories. Adventure Creator was built using Rails and Postgres on the backend and React, CSS, React Drag and Drop, and SVG on the frontend."
 
-      projectDescArea.append(projectDesc)
+      projectDescArea.append(video, projectDesc)
 
     } else if (evt.target.alt === "Stitcher") {
 
@@ -109,7 +101,7 @@ projectFigures.forEach(figure =>
 
       projectDesc.innerText = "With Stitcher, users can discover and create cross stitch designs. Users can view needed supplies and track their progress as they stitch the design using a progress bar on their private project page. Stitcher was built with Rails and React."
 
-      projectDescArea.append(projectDesc)
+      projectDescArea.append(video, projectDesc)
 
     } else if (evt.target.alt === "Arcade") {
       
@@ -121,7 +113,7 @@ projectFigures.forEach(figure =>
 
       projectDesc.innerText = "Arcade users can play custom-built games, view leaderboards, and track their stats. This app is a vanilla Javascript single page application that utilizes a custom-built API to track player stats and general global and game-level leaderboards."
 
-      projectDescArea.append(projectDesc)
+      projectDescArea.append(video, projectDesc)
     }
 
     // add close button to modal
@@ -138,7 +130,7 @@ projectFigures.forEach(figure =>
       insideModal.innerHTML = ""
     })
 
-    insideModal.append(exitModalButton, video, projectDescArea)
+    insideModal.append(exitModalButton, projectDescArea)
   })
 
 )
